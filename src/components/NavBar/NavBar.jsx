@@ -4,6 +4,7 @@
 import './NavBar.css'
 import  { CarWidget } from '../CarWidget/CarWidget'
 import logo from '../../assets/logo.jpg'
+import { NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
 
@@ -16,16 +17,16 @@ export const NavBar = () => {
           </a>
           <ul className="nav navbar-nav" id="navbarNav">
             <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
+              <NavLink to="/" className="nav-link">Home</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Categories</a>
+              <NavLink to="/" className="nav-link">Categories</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Brands</a>
+              <NavLink to="/" className="nav-link">Brands</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Inspirations</a>
+              <NavLink to="/" className="nav-link">Inspirations</NavLink>
             </li>
             <li className="nav-item">
               <CarWidget />

@@ -1,15 +1,13 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-import './ItemListContainer.css'
+
+import {ItemList} from '../ItemList/ItemList'
+
 
 export const ItemListContainer = ({greeting}) => {
 
   return (
     <>
-      <div className='itemListDiv'>
-        <p>greeting : {greeting}</p>
-      </div>
+      <p>greeting : {greeting}</p>
+      <ItemList></ItemList>
     </>
   )
 }

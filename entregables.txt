@@ -1,0 +1,7 @@
+Primera Pre Entrega
+* Componente NavBar.jsx
+    * Componente CarWidget.jsx
+* Componente ItemListContainer
+
+ICONOS
+https://www.reshot.com/free-svg-icons/ecommerce/
