@@ -3,27 +3,27 @@ import './ItemList.css'
 import { Item } from '../Item/Item'
 import { getProducts } from '../productsMock/productsMock'
 
-export const ItemList = () => {
+export const ItemList = ( { category } ) => {
 
   const [products, setProducts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect( () => {
-    getProducts()
+    setIsLoading(isLoading => true)
+    getProducts(null, category)
       .then(resp => {
-          console.log("guardados los productios!")
+          console.log("guardados los productos")
+          console.log(category)
           setIsLoading(isLoading => false) // lo usamos para cargar los produyctis y ocutar el CARGANDO
           setProducts(resp)
       })
       .catch(error => console.log(error))  
-    }, [])
+    }, [category])
 
 
   return (
     <>
-      <div className='itemListDiv d-flex'>
-        
-        <h2>Productos from map function</h2>
+      <div className='d-flex flex-sm-wrap'>
         {
           //isLLoading nos permite mostrar u CARGANDO o animacion mientras estamos obteniendo la info
           isLoading ? <h2>CARGANDO PRODUCTOS!</h2> : 

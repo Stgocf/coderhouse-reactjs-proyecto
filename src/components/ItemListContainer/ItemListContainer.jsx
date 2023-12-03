@@ -1,13 +1,16 @@
 
 import {ItemList} from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = () => {
+  const { category } = useParams()
 
   return (
     <>
-      <p>greeting : {greeting}</p>
-      <ItemList></ItemList>
+      <div className = 'container d-flex flex-column align-items-center'>
+        <ItemList  category={category}></ItemList>
+      </div>
     </>
   )
 }

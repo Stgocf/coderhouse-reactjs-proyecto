@@ -1,12 +1,12 @@
 import  { Link } from 'react-router-dom'
 
 import productImage from '../../assets/products/test_producto.jpg';
-export const Detail = ({ id, name, desc, stock }) => {
+export const Detail = ({ id, name, desc, stock , imageUrl}) => {
 
   return (
     <>
         <div className="card" >
-            <img src={productImage} className="card-img-top" alt="..."/>
+            <img src={imageUrl} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">Nombre: {name}</h5>
                 <p className="card-text">Identificador: {id}</p>

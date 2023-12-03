@@ -1,8 +1,10 @@
 import './App.css'
+import { BrowserRouter, Routes, Route } from  'react-router-dom'
+
 import { NavBar } from './components/NavBar/NavBar'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
-import { BrowserRouter, Routes, Route } from  'react-router-dom'
+
 
 const App = () => {
   return (
@@ -10,17 +12,10 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={ <ItemListContainer > </ItemListContainer> }  />
+        <Route path='/category/:category' element={ <ItemListContainer > </ItemListContainer> }  />
         <Route path='/itemDetail/:id' element={ <ItemDetailContainer></ItemDetailContainer> }  />
       </Routes>
     </BrowserRouter>
-    /*<>
-      <div className='appDiv'>
-        <NavBar />
-        <ItemListContainer greeting='Bienvenidos a mi ecommerce de joyería'/>
-        <ItemDetailContainer></ItemDetailContainer>
-      </div>
-    </>
-    */
   )
 }
 

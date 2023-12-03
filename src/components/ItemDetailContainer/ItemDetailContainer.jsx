@@ -3,13 +3,12 @@ import {ItemDetail} from '../ItemDetail/ItemDetail'
 
 
 
-export const ItemDetailContainer = ({greeting}) => {
+export const ItemDetailContainer = () => {
     const { id } = useParams()
 
     return (
         <>
-        <p>Iten Detail Container</p>
-        <ItemDetail  id={id} ></ItemDetail>
+            <ItemDetail  id={id} ></ItemDetail>
         </>
     )
 }

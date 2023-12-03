@@ -4,7 +4,7 @@
 import './NavBar.css'
 import  { CarWidget } from '../CarWidget/CarWidget'
 import logo from '../../assets/logo.jpg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 export const NavBar = () => {
 
@@ -20,13 +20,19 @@ export const NavBar = () => {
               <NavLink to="/" className="nav-link">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">Categories</NavLink>
+              <NavLink to='/category/Necklaces' className="nav-link">Necklaces</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">Brands</NavLink>
+              <NavLink to="/category/Earrings" className="nav-link">Earrings</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">Inspirations</NavLink>
+              <NavLink to="/category/Bracelets" className="nav-link">Bracelets</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/category/Rings" className="nav-link">Rings</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/category/Brooches" className="nav-link">Brooches</NavLink>
             </li>
             <li className="nav-item">
               <CarWidget />

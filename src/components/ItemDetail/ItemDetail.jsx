@@ -22,7 +22,6 @@ export const ItemDetail = ({ id }) => {
   return (
     <>
         <div className="d-flex">
-            <h2>Productos from map function</h2>
             {
             //isLLoading nos permite mostrar u CARGANDO o animacion mientras estamos obteniendo la info
             isLoading ? <h2>CARGANDO DETLLE PRODUCTO ESPECIFICO!</h2> : 

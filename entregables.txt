@@ -5,3 +5,14 @@ Primera Pre Entrega
 
 ICONOS
 https://www.reshot.com/free-svg-icons/ecommerce/
+
+Hola Santiago como estas? he estado revisando tu proyecto y tengo para comentarte que el mismo tiene aspectos muy positivos, 
+has podido presentar los productos y filtrarlos uno por uno por id, los hooks han sido utilizados muy bien en cada ocasion y 
+es muy interesante el uso que has implementado de los componentes de bootstrap.
+
+Por otro lado he tenido inconvenientes para poder navegar entre las categorias de la navbar ya que no esta filtrando correctamante por categorias, 
+este es un aspecto que debe corregirse para poder pasar la entrega a aprobada. 
+Habria que revisar el router y el uso de "useParams" para saber cual es el problema en concreto.
+
+En el navbar es donde deben estar pasadas las rutas en los Link to=  para que el usePArams en el itemListContainer 
+pueda filtrar por categorias
