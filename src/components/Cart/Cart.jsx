@@ -5,7 +5,6 @@ import { OrderForm } from "../OrderForm/OrderForm";
 
 export const Cart = () => {
     const { cartItems, totalCartItems, clearCartItems, orderId} = useContext(CartContext)
-    console.log(cartItems)
 
     return (
         <>
@@ -15,7 +14,6 @@ export const Cart = () => {
                 {cartItems.map( item => <CartItem key={item.id} { ...item} > </CartItem> ) }
             </div>
             <OrderForm></OrderForm>
-            <p>Order ID Firebase: {orderId}</p>
         </>
     )
 }

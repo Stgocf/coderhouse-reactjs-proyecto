@@ -17,17 +17,22 @@ export const OrderForm = () => {
 
     return (
         <>
-        <form>
-            <div className="form-group">
+        <form className="d-flex m-4">
+            <div className="form-group m-4">
                 <label for="name">Nombre</label>
                 <input type="email" className="form-control" id="name" placeholder="Enter email"  onChange={ (e) => setName(e.target.value) }/>
             </div>
-            <div className="form-group">
+            <div className="form-group m-4">
                 <label for="email">Email address</label>
                 <input type="email" className="form-control" id="email"  placeholder="Enter email"  onChange={ (e) => setEmail(e.target.value) }/>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={handleForm}>Comprar Carrito</button>
+            <button type="submit" className="btn btn-primary m-4" onClick={handleForm}>Comprar Carrito</button>
         </form>
+        {orderId && (
+            <div>
+                <p>Order ID Firebase: {orderId}</p>
+            </div>
+            )}
         </>
     )
 }

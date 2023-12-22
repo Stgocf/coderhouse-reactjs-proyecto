@@ -1,9 +1,8 @@
 import { useState } from "react";
 import './ItemCounter.css'
 
-export const ItemCounter = ({max_stock}) => {
+export const ItemCounter = ({max_stock, itemQty, setItemQty}) => {
 
-    const [itemQty, setItemQty] = useState(0)
 
     const minusQty = () => {
         if (itemQty === 0 ){
