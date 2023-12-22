@@ -1,12 +1,29 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../context/CartContext"
-
+import { serverTimestamp, addDoc, collection } from "firebase/firestore"
+import { db } from "../../config/firebaseConfig"
 
 export const OrderForm = () => {
-    const { addOrder, cartItems, totalCartItems, orderId} = useContext(CartContext)
+    const {cartItems, totalCartItems} = useContext(CartContext)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
+    const [orderId, setOrderId] = useState("")
     
+    const addOrder = (cartItems, userData, totalCartItems) => { 
+        const newOrder = {
+          buyer: userData,
+          items: cartItems,
+          data: serverTimestamp(),
+          totalCartItems
+        }
+        addDoc( collection(db, "orders"), newOrder )
+          .then(docRef => {
+            setOrderId(docRef.id)
+          })
+          .catch( error => {
+            console.log(error)
+          })
+      }
 
     const handleForm = (e) => {
         e.preventDefault()
@@ -19,11 +36,11 @@ export const OrderForm = () => {
         <>
         <form className="d-flex m-4">
             <div className="form-group m-4">
-                <label for="name">Nombre</label>
+                <label htmlFor="name">Nombre</label>
                 <input type="email" className="form-control" id="name" placeholder="Enter email"  onChange={ (e) => setName(e.target.value) }/>
             </div>
             <div className="form-group m-4">
-                <label for="email">Email address</label>
+                <label htmlFor="email">Email address</label>
                 <input type="email" className="form-control" id="email"  placeholder="Enter email"  onChange={ (e) => setEmail(e.target.value) }/>
             </div>
             <button type="submit" className="btn btn-primary m-4" onClick={handleForm}>Comprar Carrito</button>

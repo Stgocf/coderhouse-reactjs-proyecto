@@ -4,7 +4,7 @@ import { CartItem } from "../CartItem/CartItem";
 import { OrderForm } from "../OrderForm/OrderForm";
 
 export const Cart = () => {
-    const { cartItems, totalCartItems, clearCartItems, orderId} = useContext(CartContext)
+    const { cartItems, totalCartItems, clearCartItems} = useContext(CartContext)
 
     return (
         <>
@@ -13,7 +13,7 @@ export const Cart = () => {
             <div className='d-flex flex-sm-wrap'>
                 {cartItems.map( item => <CartItem key={item.id} { ...item} > </CartItem> ) }
             </div>
-            <OrderForm></OrderForm>
+            <OrderForm  ></OrderForm>
         </>
     )
 }
