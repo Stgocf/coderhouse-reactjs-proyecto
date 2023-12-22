@@ -3,14 +3,18 @@
 import { CiShoppingCart } from "react-icons/ci";
 //import viteLogo from '/vite.svg'
 import './CarWidget.css'
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export const CarWidget = () => {
+
+  const {totalQuantity} = useContext(CartContext)
 
   return (
     <>
       <div className='carWidgetDiv d-flex'>
         <CiShoppingCart />  
-        <p>Contador: 1</p>
+        <p>{totalQuantity}</p>
       </div>
     </>
   )

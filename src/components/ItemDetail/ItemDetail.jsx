@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
-import { getProducts } from '../productsMock/productsMock'
+import { getProducts, getProductsFirebase } from '../productsMock/productsMock'
 import { Detail } from '../Detail/Detail'
 
 
 export const ItemDetail = ({ id }) => {
-
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
   
     useEffect( () => {
-      getProducts(id)
+      getProductsFirebase(id)
         .then(resp => {
             console.log("guardados producto especifico!")
             console.log(resp)

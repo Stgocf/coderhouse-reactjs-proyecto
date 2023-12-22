@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './ItemList.css'
 import { Item } from '../Item/Item'
-import { getProducts } from '../productsMock/productsMock'
+import { getProducts, getProductsFirebase } from '../productsMock/productsMock'
 
 export const ItemList = ( { category } ) => {
 
@@ -10,7 +10,8 @@ export const ItemList = ( { category } ) => {
 
   useEffect( () => {
     setIsLoading(isLoading => true)
-    getProducts(null, category)
+    //getProducts(null, category)
+    getProductsFirebase(null, category)
       .then(resp => {
           console.log("guardados los productos")
           console.log(category)
