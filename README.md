@@ -1,8 +1,13 @@
-# React + Vite
+# Curso de React , Bootcamp Codernhouse Diciembre 2023
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##Descripcion del proyecto
+Proyecto desarrollado en el contexto del tercer curso del bootcamp desarrollo web de Coderhouse, donde aprendemos algo de
+- ReactJs
+- Firebase
+- boostrap 
+- Vite
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##instalacion
+- git clone "url"
+- npm install
+- npm run dev

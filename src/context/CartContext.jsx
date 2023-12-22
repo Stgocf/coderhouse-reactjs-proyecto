@@ -1,4 +1,7 @@
 import { createContext, useState, useEffect } from "react";
+import { addDoc } from "firebase/firestore";
+import { db } from "../config/firebaseConfig";
+import { serverTimestamp, collection } from "firebase/firestore";
 
 export const CartContext = createContext(null);
 
@@ -7,6 +10,7 @@ export const CartContextProvider = ( { children }) => {
     const [cartItems, setCartItems] = useState([]);
   const [totalCartItems, setTotalCartItems] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
+  const [orderId, setOrderId] = useState("")
 
   const addItem = (item, quantity) => {
     const { id, name, price } = item;
@@ -67,13 +71,32 @@ export const CartContextProvider = ( { children }) => {
             handleTotalQuantity();
      }, [cartItems] )
 
+     const addOrder = (cartItems, userData, totalCartItems) => { 
+      const newOrder = {
+        buyer: userData,
+        items: cartItems,
+        data: serverTimestamp(),
+        totalCartItems
+      }
+      console.log(newOrder)
+      addDoc( collection(db, "orders"), newOrder )
+        .then(docRef => {
+          console.log(docRef.id)
+          setOrderId(docRef.id)
+        })
+        .catch( error => {
+          console.log(error)
+        })
+    }
+
   const objetValue = {
     cartItems,
     totalCartItems,
     totalQuantity,
     addItem,
     removeItem,
-    clearCartItems
+    clearCartItems,
+    addOrder
   };
 
   return <CartContext.Provider value={objetValue}> {children} </CartContext.Provider>;
